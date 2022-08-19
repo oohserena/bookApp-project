@@ -1,88 +1,100 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <!-- required meta tags-->
+<head>
+    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- bootstrap css-->
-    <title>Bootstrap demo</title>
+    <!-- fontawesome -->
+   
+    <script
+      src="https://kit.fontawesome.com/42a182743f.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      href="https://fonts.googleapis.com/css2?family=Oleo+Script+Swash+Caps&family=Roboto:wght@300&display=swap"
       rel="stylesheet"
-      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+    />
+    <link rel="stylesheet" href="../../public/css/home.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/153d74e558.js" crossorigin="anonymous"></script>
-
-    <!-- custom css-->
+   
+    <!-- custom css -->
     <link rel="stylesheet" href="../../public/css/profile.css" />
     <title>Book Directory App</title>
   </head>
   <body>
-    <!-- navbar-->
+    <!-- Navbar -->
+    <!-- Navbar -->
     <%if(authUser){ %> <%-include('../partials/privateNavbar.ejs')%> <%}else{%>
     <%-include('../partials/publicNavbar.ejs')%> <%}%>
-    <!-- end navbar-->
-
-    <!--header-->
-
+   
+    <!-- header -->
+   
+    <!-- header -->
     <div class="header-wrapper">
       <div class="header-content">
         <h1>Welcome: <%=user.fullName%></h1>
         <h2>Email: <%=user.email%></h2>
-        
+   
         <button class="add-btn">Add New Book</button>
       </div>
-
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,96L288,32L576,256L864,288L1152,64L1440,256L1440,320L1152,320L864,320L576,320L288,320L0,320Z"></path></svg>
+   
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#131f39"
+          fill-opacity="1"
+          d="M0,32L480,32L960,288L1440,320L1440,320L960,320L480,320L0,320Z"
+        ></path>
+      </svg>
     </div>
-
-    <!--end header-->
-
+    <!-- header ends here -->
+   
     <div class="home-heading-title">
-      <h1>Latest Books created</h1>
+      <h1>Your Total Books <%=user.books.length%></h1>
     </div>
-
     <!-- card container -->
+   
     <div class="card-container">
-        <%user.books.forEach((book)=>{%>
-        <!-- item1 -->
-        <div class="card-item-wrapper">
-            <div class="card-category">
-                <div class="dot"></div>
-                <div><%=book.category%</div>
-            </div>
-            <div class="card-content-wrapper">
-                <h2 class="title"><%=book.title%></h2>
-                <p class="description"><%=book.desc%</p>
-                <div class="user">
-                    <p><%=book.author%></p>
-                    <p><%=book.createdAt%></p>
-                </div>
-            </div>
-            <div class="card-item-footer">
-                <button class="edit">
-                    <a href="">
-                        <i class="fa-solid fa-pen-to-square"></i>
-                    </a>
-                </button>
-                <button class="delete">
-                    <a href="">
-                        <i class="fa-solid fa-trash-alt"></i>
-                    </a>
-                </button>
-            </div>
-        </div> 
-        <% })%>
+      <%user.books.forEach((book)=>{%>
+      <!-- item 1 -->
+      <div class="card-item-wrapper">
+        <div class="card-category">
+          <div class="dot"></div>
+          <div><%=book.category%></div>
+        </div>
+        <div class="card-content-wrapper">
+          <h2 class="title"><%=book.title%></h2>
+          <p class="description"><%=book.desc%></p>
+          <div class="user">
+            <p><%=book.author%></p>
+            <p><%=book.createdAt%></p>
+          </div>
+        </div>
+        <div class="card-item-footer">
+          <button class="edit">
+            <a href="">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+          </button>
+          <button class="delete">
+            <a href="">
+              <i class="fa-solid fa-trash-alt"></i>
+            </a>
+          </button>
+        </div>
+      </div>
+      <% })%>
     </div>
-</body>
-
-    <!-- bootstrap js -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"
-    ></script>
-</html>
+    <!-- card container ends here -->
+  </body>
+   
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"
+  ></script>  
