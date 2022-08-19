@@ -1,0 +1,75 @@
+/* reset browser default settings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0.3),
+        rgba(0, 0, 0, 0.6)
+      ),
+      url("https://images.pexels.com/photos/12861655/pexels-photo-12861655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+  }
+  
+  .form-container {
+    height: 100vh;
+    display: flex;
+    color: #ccc;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .register {
+    width: 90%;
+    max-width: 500px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .register-icon {
+    font-size: 3rem;
+    color: grey;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px;
+  }
+  
+  .register-form-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .register-form-input input {
+    background-color: transparent;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color: #ccc;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .register-form-input button {
+    background-color: rgb(217, 19, 19);
+    color: #ccc;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  
+  .register-form-input button:hover {
+    background-color: rgb(86, 0, 139);
+    transform: scale(1.1);
+  }
+  

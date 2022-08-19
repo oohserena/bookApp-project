@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/153d74e558.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="../css/register.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <div class="form-container">
+      <h1>Register</h1>
+      <!-- login icon-->
+      <div class="register-icon">
+        <i class="fa-solid fa-key"></i>
+      </div>
+
+      <p style="color: red"><%=error%</p>
+      <form class="register" action="/api/users/register method="post">
+        <div class="register-form-input">
+          <label for="">Full Name</label>
+          <input type="text" name="fullName" />
+        </div>
+
+        <div class="register-form-input">
+          <label for="">Email</label>
+          <input type="email" name="" id="" />
+        </div>
+
+        <div class="register-form-input">
+          <label for="">Password</label>
+          <input type="password" name="password" />
+        </div>
+
+        <div class="register-form-input">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
