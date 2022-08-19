@@ -73,7 +73,8 @@ app.use('/api', bookRoute);
 app.use(notFound);
 app.use(errorHandler);
 
+const isPasswordMatched = process.env.PORT || 8000
 
-app.listen(8000, () => {
-    console.log('Server is up and running');
+app.listen(PORT, () => {
+    console.log('Server is up and running'+ " " + PORT);
 });
